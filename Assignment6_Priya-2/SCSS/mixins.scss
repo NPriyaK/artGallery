@@ -1,0 +1,153 @@
+@mixin personImage {
+    background: url(/images/pascal-bernardon-e8t3SqTMNF0-unsplash.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+@mixin bgImage {
+    background: url(/images/pexels-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 57%;
+    opacity: 0.9;
+}
+@mixin headerFont {
+    font-family: $main-font;
+    font-size: 1.2rem;
+    font-weight: 600;
+    // color: #262A53;
+    background: radial-gradient(circle, rgba(255,160,160,1) 0%, rgba(38,42,83,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+@mixin helloButton{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid $btn-color;
+    background-color: $btn-color;
+    color: #fff;
+}
+@mixin emailBtn{
+    width: 140px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    background-color: $workbg-color;
+    color: $main-color;
+}
+@mixin portfolioBg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@mixin flexcenter{
+    display: flex;
+    align-items: center;
+}
+
+
+// Responsive
+
+@mixin helloButtonTablet{
+    max-width: 110px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid $btn-color;
+    background-color: $btn-color;
+    color: #fff;
+}
+
+
+// Animations for Abouts
+
+@mixin AboutoneAnim{
+    @keyframes Aboutone {
+        0%{
+            width: 0%;
+        }
+        100%{
+            width: 90%;
+        }
+    }
+}
+@mixin AbouttwoAnim{
+    @keyframes Abouttwo {
+        0%{
+            width: 0%;
+        }
+        100%{
+            width: 82%;
+        }
+    }
+}
+@mixin AboutthreeAnim{
+    @keyframes Aboutthree {
+        0%{
+            width: 0%;
+        }
+        100%{
+            width: 42%;
+        }
+    }
+}
+@mixin AboutfourAnim{
+    @keyframes Aboutfour {
+        0%{
+            width: 0%;
+        }
+        100%{
+            width: 60%;
+        }
+    }
+}
+@mixin AboutfiveAnim{
+    @keyframes Aboutfive {
+        0%{
+            width: 0%;
+        }
+        100%{
+            width: 20%;
+        }
+    }
+}
+
+// Animations for Abouts Ends Here
+
+// Mediaqueries
+//Interpolation
+@mixin small {
+    @media (max-width: #{$small-width}) {
+        @content;
+      }
+}
+//Interpolation
+@mixin mobile {
+    @media (min-width: #{$small-width + 1px}) and (max-width: #{$mobile-width}) {
+        @content;
+      }
+}
+
+//Interpolation
+@mixin tablet {
+    @media (min-width: #{$mobile-width + 1px}) and (max-width: #{$tablet-width}) {
+      @content;
+    }
+}
+
+//Interpolation
+@mixin laptop {
+    @media (min-width: #{$tablet-width + 1px}) and (max-width: #{$laptop-width}) {
+        @content;
+    }
+}  
+//Interpolation
+@mixin desktop {
+    @media (min-width: #{$laptop-width + 1px}) and (max-width: #{$desktop-width}) {
+        @content;
+    }
+}  
+//Interpolation
+@mixin largescreen {
+    @media (min-width: #{$desktop-width + 1px}) {
+        @content;
+    }
+}  
